@@ -4,11 +4,12 @@
 	</div>
 </div>
 <div class="row">
+	<%  @courses.each do |c| %>
 	<div class="col s6 m6">
 	  <div class="card blue-grey darken-1">
 	    <div class="card-content white-text">
-	      <span class="card-title">Code: CS111: Intro to Computer Science</span>
-	      <p>A thorough Intro to CSE1</p>
+        <span class="card-title"><%= c.short_name %> <%= c.name %></span>
+	    <p><%= c.description %></p>
 	    </div>
 	    <div class="card-action">
 	      <a href="#">Enroll</a>
@@ -16,16 +17,5 @@
 	    </div>
 	  </div>
 	</div>
-	<div class="col s6 m6">
-	  <div class="card blue-grey darken-1">
-	    <div class="card-content white-text">
-	      <span class="card-title">Code: CS112: Intro to Computer Science</span>
-	      <p>A thorough Intro to CSE2</p>
-	    </div>
-	    <div class="card-action">
-	      <a href="#">Enroll</a>
-	      <a href="#">Info</a>
-	    </div>
-	  </div>
-	</div>
+	<%end%>
 </div>
