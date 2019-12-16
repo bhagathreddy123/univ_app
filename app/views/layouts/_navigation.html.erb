@@ -1,13 +1,17 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
    <li> <%= session_link %></li>
-    <li><a href="#!">two</a></li>
+   <% if logged_in? %>
+    <li><%= link_to "Profile", student_path(current_user) %></li>
+    <% end %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
    <li> <%= session_link %></li>
-    <li><a href="#!">two</a></li>
+   <% if logged_in? %>
+    <li><%= link_to "Profile", student_path(current_user) %></li>
+    <% end %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
   </ul>
@@ -21,7 +25,7 @@
         </a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><%= link_to "Courses", root_path %></li>
-          <li><% if logged_in? %> Enrollments%> <%end %></li>
+          <li><% if logged_in? %> Enrollments <%end %></li>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
